@@ -1,5 +1,6 @@
 import { Button, Card, Chip, Separator } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import { AiOutlineLike } from "react-icons/ai";
 import { BiDownload } from "react-icons/bi";
 
@@ -38,12 +39,14 @@ const PhotoCard = ({ photo }) => {
           <p>{photo.downloads}</p>
         </div>
       </div>
-      <Button
-        variant="outline"
-        className="w-full hover:bg-linear-to-r from-pink-400 to-violet-400  "
-      >
-        View
-      </Button>
+      <Link href={`/all-photos/${photo.id}`}>
+        <Button
+          variant="outline"
+          className="w-full hover:bg-linear-to-r from-pink-400 to-violet-400  "
+        >
+          View
+        </Button>
+      </Link>
     </Card>
   );
 };
